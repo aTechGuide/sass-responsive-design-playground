@@ -3,6 +3,9 @@
   grid-template-columns: 1fr;
   grid-template-rows: auto auto;
   gap: 40px;
+  // max-width: 1000px; // to prevent super wide content for really big screens
+  width: min(100% - 40px, 1000px); // smaller screen add padding of 20px on each side and bigger screen width = 1000px with 0 padding
+  margin-inline: auto;
 
   @media (min-width: 900px) {
     grid-template-columns: 2fr 1fr;

@@ -5,8 +5,22 @@ $breakpoints-up: (
   'xlarge': 90, // (1440px / 16)
 );
 
+// we don't want overlap on breakpoints, to avoid weird behavour on website
+// 699.98px, 899.98px, 1339.98px
+$breakpoints-down: (
+  'small': 43.7485em, // (699.98px / 16 = 43.7485)
+  'medium': 56.24875em, // (899.98px / 16)
+  'large': 89.99875em, // (1339.98px / 16)
+);
+
 @mixin breakpoint($size) {
   @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
     @content;
   }
 }

@@ -25,6 +25,11 @@
 
   &__sidebar {
     background-color: hsl(300, 100%, 30%);
+
+    // For Sytle rules we only want on Mobile, NOT Desktop
+    @include u.breakpoint-down(medium) {
+      text-align: center;
+    }
   }
 
 }

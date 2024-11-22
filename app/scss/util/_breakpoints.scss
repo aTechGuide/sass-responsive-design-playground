@@ -1,16 +1,18 @@
+@use 'functions' as f;
+
 // 700px, 900px, 1440px
 $breakpoints-up: (
-  'medium': 43.75em, // (700px / 16 = 43.75)
-  'large': 56.25em, // (900px / 16)
-  'xlarge': 90, // (1440px / 16)
+  'medium': f.em(700),
+  'large': f.em(900),
+  'xlarge': f.em(1440),
 );
 
 // we don't want overlap on breakpoints, to avoid weird behavour on website
-// 699.98px, 899.98px, 1339.98px
+// 699.98px, 899.98px, 1439.98px
 $breakpoints-down: (
-  'small': 43.7485em, // (699.98px / 16 = 43.7485)
-  'medium': 56.24875em, // (899.98px / 16)
-  'large': 89.99875em, // (1339.98px / 16)
+  'small': f.em(699.98),
+  'medium': f.em(899.98),
+  'large': f.em(1439.98),
 );
 
 @mixin breakpoint($size) {
